@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const prompt = Prompt({
@@ -11,6 +12,10 @@ const prompt = Prompt({
 export const metadata: Metadata = {
   title: "มูลนิธิอัลอามานะห์ เพื่อการศึกษาและสังคม",
   description: "มูลนิธิอัลอามานะห์ เพื่อการศึกษาและสังคม จังหวัดสุราษฎร์ธานี - รับบริจาคเพื่อสนับสนุนการศึกษาและพัฒนาสังคม",
+  icons: {
+    icon: '/images/logo.png',
+    apple: '/images/logo.png',
+  },
 };
 
 export default function RootLayout({
@@ -24,6 +29,7 @@ export default function RootLayout({
         className={`${prompt.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
